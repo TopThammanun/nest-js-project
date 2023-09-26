@@ -7,8 +7,12 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model User {
-  USER_ID  String @id
-  EMAIL    String @unique(map: "User_email_key")
-  USERNAME String
+model Documents {
+  id        Int       @id @default(sequence())
+  publicId  String    @unique @db.String(255)
+  createdAt DateTime  @default(now())
+  updatedAt DateTime?
+  title     String    @db.String(255)
+  ownerId   String    @db.String(255)
+  document  Json?
 }
