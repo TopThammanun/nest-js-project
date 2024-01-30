@@ -16,3 +16,23 @@ model Documents {
   ownerId   String    @db.String(255)
   document  Json?
 }
+
+model TestScb {
+  id                     Int    @id @default(sequence())
+  payeeProxyId           String @db.String(255)
+  payeeProxyType         String @db.String(255)
+  payeeAccountNumber     String @db.String(255)
+  payerAccountNumber     String @db.String(255)
+  payerName              String @db.String(255)
+  sendingBankCode        String @db.String(255)
+  receivingBankCode      String @db.String(255)
+  amount                 String @db.String(255)
+  transactionId          String @db.String(255)
+  transactionDateandTime String @db.String(255)
+  billPaymentRef1        String @db.String(255)
+  billPaymentRef2        String @db.String(255)
+  billPaymentRef3        String @db.String(255)
+  currencyCode           String @db.String(255)
+  channelCode            String @db.String(255)
+  transactionType        String @db.String(255)
+}
