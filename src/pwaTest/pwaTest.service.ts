@@ -14,4 +14,8 @@ export class pwaTestService {
       data,
     });
   }
+
+  async getAll(): Promise<pwaTest[]> {
+    return this.prisma.pwaTest.findMany({});
+  }
 }

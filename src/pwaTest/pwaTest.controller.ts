@@ -15,4 +15,9 @@ export class pwaTestController {
   createDoc(@Body() data: Prisma.pwaTestCreateInput): any {
     return this.pwaTestService.create(data);
   }
+
+  @Get("/all")
+  getAll(): any {
+    return this.pwaTestService.getAll();
+  }
 }
