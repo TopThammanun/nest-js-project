@@ -39,3 +39,10 @@ model TestScb {
   channelCode            String @db.String(255)
   transactionType        String @db.String(255)
 }
+
+model pwaTest {
+  id    Int    @id @default(sequence())
+  fname String @db.String(255)
+  lname String @db.String(255)
+  email String @db.String(255)
+}

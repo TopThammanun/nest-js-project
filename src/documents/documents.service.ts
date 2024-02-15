@@ -1,12 +1,12 @@
-import { Injectable } from '@nestjs/common';
-import { Prisma, Documents } from '@prisma/client';
-import { PrismaService } from '../prisma.service';
+import { Injectable } from "@nestjs/common";
+import { Prisma, Documents } from "@prisma/client";
+import { PrismaService } from "../prisma.service";
 
 @Injectable()
 export class DocumentsService {
   constructor(private prisma: PrismaService) {}
   getHello(): string {
-    return 'Hello World!';
+    return "Hello World!";
   }
 
   async getAll(): Promise<Documents[]> {
@@ -21,7 +21,7 @@ export class DocumentsService {
 
   async updatePost(
     publicId: string,
-    data: Prisma.DocumentsUpdateInput,
+    data: Prisma.DocumentsUpdateInput
   ): Promise<Documents> {
     return this.prisma.documents.update({
       where: {

@@ -1,8 +1,8 @@
-import { Controller, Get, Post, Body, Param, Put } from '@nestjs/common';
-import { DocumentsService } from './documents.service';
-import { Prisma } from '@prisma/client';
+import { Controller, Get, Post, Body, Param, Put } from "@nestjs/common";
+import { DocumentsService } from "./documents.service";
+import { Prisma } from "@prisma/client";
 
-@Controller('documents')
+@Controller("documents")
 export class DocumentsController {
   constructor(private readonly docService: DocumentsService) {}
 
@@ -11,20 +11,20 @@ export class DocumentsController {
     return this.docService.getHello();
   }
 
-  @Get('/all')
+  @Get("/all")
   getAll(): any {
     return this.docService.getAll();
   }
 
-  @Post('/create')
+  @Post("/create")
   createDoc(@Body() data: Prisma.DocumentsCreateInput): any {
     return this.docService.createPost(data);
   }
 
-  @Put('/update/:publicId')
+  @Put("/update/:publicId")
   updateDoc(
-    @Param('publicId') publicId: string,
-    @Body() data: Prisma.DocumentsUpdateInput,
+    @Param("publicId") publicId: string,
+    @Body() data: Prisma.DocumentsUpdateInput
   ): any {
     return this.docService.updatePost(publicId, data);
   }

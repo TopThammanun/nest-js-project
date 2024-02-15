@@ -1,5 +1,5 @@
 import { ScbService } from "./scb.service";
-import { Controller, Get, Post, Body, Param, Put } from "@nestjs/common";
+import { Controller, Get, Post, Body } from "@nestjs/common";
 import { Prisma } from "@prisma/client";
 
 @Controller("scb")
